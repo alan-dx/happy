@@ -7,8 +7,10 @@ import OrphanegesMap from './pages/OrphanegesMap';
 function Routes() {
     return (
         <BrowserRouter>
-            <Route path="/" exact component={Landing} />
-            <Route path="/app" component={OrphanegesMap} />
+            <Switch>
+                <Route path="/" exact component={Landing} />
+                <Route path="/app" component={OrphanegesMap} />
+            </Switch>
         </BrowserRouter>
     );
 }
