@@ -34,5 +34,7 @@ npm-debug.*
 *.orig.*
 web-build/
 
+notes.txt
+
 # macOS
 .DS_Store
