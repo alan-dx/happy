@@ -1,0 +1,12 @@
+    COMANDOS EM SEQUÊNICA
+- yarn init -y => Inicializa o projeto node
+- yarn add express => Instala o express;
+- yarn add @types/express => types do express;
+- yarn add typescript => Node por padrão não interpreta typescript, dessa forma é necessário instalar a dependência typescript;
+- yarn tsc --init => Cria o arquivo para configurar a conversão do typescript para o Node interpretar;
+    - No arquivo tsconfig.json => altere a linha "target":"es5" para "target":"es2017";
+- yarn add ts-node-dev => Para fazer o projeto rodar utilizando typescript, é algo similar ao nodemon;
+    - No arquivo package.json configure a chave "script" para executar os comandos personalizados:
+        - "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+- yarn add typeorm => Para fazer o node acessar o banco de dados;
+- yarn add sqlite3 => Integração do sqlite3 com node;
