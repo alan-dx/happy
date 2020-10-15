@@ -1,6 +1,7 @@
 import express from 'express';
 import path from "path";
 import 'express-async-errors';
+import cors from 'cors';
 
 import './database/connection';
 
@@ -12,6 +13,7 @@ import errorHandler from './errors/handler';
 const app = express();
 app.use(express.json());
 app.use(routes)
+app.use(cors())
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))//Permite abrir os arquivos retornados
 app.use(errorHandler)
 
