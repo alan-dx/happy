@@ -11,9 +11,9 @@ import errorHandler from './errors/handler';
 //MODELO MVC
 
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.use(routes)
-app.use(cors())
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))//Permite abrir os arquivos retornados
 app.use(errorHandler)
 
