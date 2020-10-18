@@ -27,6 +27,9 @@ export default class Orphanage {
     @Column()
     open_on_weekends: boolean;
 
+    @Column()
+    contact_number: string;
+
     //Não precisa do Column, pois não é uma coluna da tabela isso será usado apenas pra fazer o relacionamento
     @OneToMany(() => Image, image => image.orphanage, {
         cascade: ['insert', 'update']//Para atualizar as imagens em um insert ou update
