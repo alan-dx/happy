@@ -18,6 +18,7 @@ interface Orphanage {
   instrucitons: string;
   opening_hours: string;
   open_on_weekends: string;
+  contact_number: string;
   images: Array<{
     id: number;
     url: string
@@ -37,8 +38,13 @@ export default function Orphanage() {
   useEffect(() => {
       api.get(`orphanages/${params.id}`).then((response) => {
           setOrphanage(response.data)
+          console.log(response.data)
       })
   }, [params.id]);
+
+  function hanldeContact() {
+    
+  }
 
   if (!orphanage) {
     return <p>Carregando...</p>
@@ -122,10 +128,10 @@ export default function Orphanage() {
               }
             </div>
 
-            <button type="button" className="contact-button">
+            <a href={`https://api.whatsapp.com/send?phone=${orphanage.contact_number}`} className="contact-button">
               <FaWhatsapp size={20} color="#FFF" />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>
